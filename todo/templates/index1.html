@@ -97,7 +97,10 @@
           <ul>
               {% for todo in incomplete %}
               <li style="font-size: 16pt">{{ todo.text }} <a href="{{ url_for('complete', id=todo.id) }}"><button>Mark As Complete</button> </a></li>
-              
+              <form action="{{ url_for('update', id=todo.id) }}" method="post">
+          <input type="text" name="todoitem">
+          <input type="submit" value="update">
+</form>
               {% endfor %}    
           </ul>
                    
